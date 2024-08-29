@@ -33,7 +33,7 @@ pipeline {
                 echo 'Test stage'
                 // The hash # symbol below works as a comment within a triple single quote multiline string
                 sh '''
-                    #test -f build/index.html
+                    test -f build/index.html
                     ls -la
                     npm test
                 '''
