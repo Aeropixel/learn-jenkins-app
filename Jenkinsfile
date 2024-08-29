@@ -39,6 +39,25 @@ pipeline {
                 '''
             }
         }
+
+        stage('E2E tests') {
+            // Needed to create again the docker image
+            agent {
+                docker {
+                    image 'mcr.microsoft.com/playwright:v1.46.1-jammy'
+                    reuseNode true
+                }
+            }
+            steps {
+                echo 'E2E tests stage'
+                // The hash # symbol below works as a comment within a triple single quote multiline string
+                sh '''
+                    npm install -g serve
+                    serve -s build
+                    npx playwright test
+                '''
+            }
+        }
     }
 
     post {
