@@ -52,7 +52,7 @@ pipeline {
                 echo 'E2E tests stage'
                 // The hash # symbol below works as a comment within a triple single quote multiline string
                 sh '''
-                    npm install -g serve
+                    npm install serve
                     serve -s build
                     npx playwright test
                 '''
