@@ -53,7 +53,8 @@ pipeline {
                 // The hash # symbol below works as a comment within a triple single quote multiline string
                 sh '''
                     npm install serve
-                    node_modules/.bin/serve -s build
+                    node_modules/.bin/serve -s build &
+                    sleep 10
                     npx playwright test
                 '''
             }
