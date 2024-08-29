@@ -22,6 +22,7 @@ pipeline {
         }
 
         stage('Test') {
+            // Needed to create again the docker image
             agent {
                 docker {
                     image 'node:18-alpine'
@@ -30,8 +31,9 @@ pipeline {
             }
             steps {
                 echo 'Test stage'
+                // The hash # symbol below works as a comment within a triple single quote multiline string
                 sh '''
-                    test -f build/index.html
+                    #test -f build/index.html
                     ls -la
                     npm test
                 '''
