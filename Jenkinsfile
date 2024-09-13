@@ -24,6 +24,9 @@ pipeline {
                     npm run build
                     ls -la
                 '''
+                script {
+                    env.SUCK_MY_DICK = sh(script: 'date', returnStdout)
+                }
             }
         }
 
@@ -144,6 +147,7 @@ pipeline {
                 sh '''
                     npx playwright test --reporter=html
                 '''
+                echo ${env.SUCK_MY_DICK}
             }
             post {
                 always {
