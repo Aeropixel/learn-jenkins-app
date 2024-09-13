@@ -25,7 +25,7 @@ pipeline {
                     ls -la
                 '''
                 script {
-                    env.SUCK_MY_DICK = sh(script: 'date', returnStdout: true)
+                    SUCK_MY_DICK = sh(script: 'date', returnStdout: true)
                 }
             }
         }
@@ -147,7 +147,7 @@ pipeline {
                 sh '''
                     npx playwright test --reporter=html
                 '''
-                echo "${env.SUCK_MY_DICK}"
+                echo "${SUCK_MY_DICK}"
             }
             post {
                 always {
