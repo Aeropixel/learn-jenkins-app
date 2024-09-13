@@ -25,7 +25,7 @@ pipeline {
                     ls -la
                 '''
                 script {
-                    env.SUCK_MY_DICK = sh(script: 'date', returnStdout)
+                    env.SUCK_MY_DICK = sh(script: 'date', returnStdout: true)
                 }
             }
         }
