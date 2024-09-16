@@ -117,7 +117,7 @@ pipeline {
             }
 
             environment {
-                CI_ENVIRONMENT_URL = 'YOUR NETLIFY SITE URL'
+                CI_ENVIRONMENT_URL = 'https://beamish-peony-50bef2.netlify.app/'
             }
 
             steps {
