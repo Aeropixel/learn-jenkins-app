@@ -44,7 +44,7 @@ pipeline {
                     sh '''
                         aws --version
                         echo "Hello S3" > index.html
-                        aws s3 sync build s3://${AWS_S3_BUCKET}/index.html
+                        aws s3 sync build s3://${AWS_S3_BUCKET}
                     '''
                 }
             }
